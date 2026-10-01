@@ -4,7 +4,8 @@
 </head>
 <body>
 <button onclick="tick()">vibrate</button>
-<input type="checkbox" switch/>
+<button onclick="tick2()">vibrate2</button>
+<input id="visiblecheckbox" type="checkbox" switch/>
 <script>
 const input = document.createElement('input');
 input.type = 'checkbox';
@@ -21,5 +22,8 @@ document.body.append(input, label);
 function tick() {
   label.click();
   if (navigator.vibrate) navigator.vibrate(10);   // Android
+}
+function tick2() {
+  visiblecheckbox.click();
 }
 </script>
