@@ -1,0 +1,20 @@
+<body>
+<button onclick="tick()">vibrate</button>
+<script>
+const input = document.createElement('input');
+input.type = 'checkbox';
+input.setAttribute('switch', '');
+input.id = 'haptic-switch';
+input.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+
+const label = document.createElement('label');
+label.htmlFor = 'haptic-switch';
+label.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+
+document.body.append(input, label);
+
+function tick() {
+  if (navigator.vibrate) navigator.vibrate(10);   // Android
+  else label.click();                              // iOS 17.4+
+}
+</script>
