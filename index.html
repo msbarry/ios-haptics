@@ -1,5 +1,10 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
 <button onclick="tick()">vibrate</button>
+<input type="checkbox" switch/>
 <script>
 const input = document.createElement('input');
 input.type = 'checkbox';
@@ -14,7 +19,7 @@ label.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
 document.body.append(input, label);
 
 function tick() {
+  label.click();
   if (navigator.vibrate) navigator.vibrate(10);   // Android
-  else label.click();                              // iOS 17.4+
 }
 </script>
